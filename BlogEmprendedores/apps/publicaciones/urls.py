@@ -19,5 +19,7 @@ urlpatterns = [
    path('Filtro/2', views.Filtro_Categorias, name="filtro_indumentaria"),
 
    path('Filtro/3', views.Filtro_Categorias, name="filtro_plantas"),
+
+   path('Borrar/<int:pk>', views.BorrarPublicacion.as_view(), name="borrar_publicacion")
    
 ]
