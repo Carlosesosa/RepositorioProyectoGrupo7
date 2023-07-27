@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="website icon" type="png" href="{% static 'img/Blog_icon.png' %}">
+  <title>EMPRENDEDORESenCHACO</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+</head>
+
+<body class="colfondo">
+
+  <div class="container">
+      <div class="row">
+          <img src="{% static 'img/Blog_icon.png' %}" width="200">
+          <h1 class="titulo ml-3">EMPRENDEDORES DEL CHACO</h1>
+      </div>
+      <div class="row">
+          
+          <div class="col-md-6">
+              <li><a href="{% url 'home' %}">INICIO</a></li>
+              <li><a href="{% url 'publicaciones:crear_publicacion' %}">PUBLICAR</a></li>
+              <li><a href="{% url 'publicaciones:listar_publicaciones' %}">PUBLICACIONES</a></li>
+          </div>  
+          <div class="col-md-6">
+              {% if user.is_authenticated %}
+              <div class="dropdown">
+                <button>{{ user.username }}</button>
+                <div class="dropdown-content">
+                    <a href="{% url 'logout' %}">CERRAR SESION</a>  
+                    <a href="{% url 'sobrenosotros' %}">NOSOTROS</a></div>
+              </div>          
+
+          {% else %}
+              <li><a href="{% url 'login' %}">INICIAR SESION</a></li>
+              <li><a href="{% url 'usuarios:registrar' %}">REGISTRARSE</a></li>
+          {% endif %}
+          </div>
+
+      </div>
+    </div><hr>
+    <div class="container p-3">
+          {% block contenido %}
+
+          {% endblock contenido %}
+    </div>
+  </div>
+</body>
+</html>

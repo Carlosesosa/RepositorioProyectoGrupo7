@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+
+<div class="container">
+    <div class="row mt-3">
+        <div class="col-md-9 mx-auto mb-5">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="{{publicacion.imagen.url}}" width="300">
+
+                </div>
+                <div class="col-md-6">
+                
+                <h2>{{publicacion.titulo}}</h2>
+                <h5>{{publicacion.contenido}}</h5>
+                <h6>{{publicacion.autor}}</h6>                
+                <h6>{{publicacion.creado}}</h6>
+                <h6>CATEGORIA: {{publicacion.categoria}}</h6>
+                </div>
+            </div> 
+                
+                               
+        </div>
+    </div>
+</div>
+
+{% endblock contenido %}

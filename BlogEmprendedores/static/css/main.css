@@ -1,0 +1,43 @@
+.colfondo{
+    background-color: aquamarine;
+    }   
+    
+    .menu{
+        margin-left: 30%;
+        margin-right: 30%;
+    }
+    
+    .titule{
+        color: rgb(0, 0, 0);
+    }
+    
+    
+    .dropdown{
+        display: inline-block;
+        position: relative;
+    
+    }
+    
+    .dropdown-content{
+        display: none;
+        position: absolute;
+        width: 100%;
+        overflow: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    }
+    
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+    
+    .dropdown-content a {
+        display: block;
+        color: black;
+        padding: 5px;
+        text-decoration: none;
+    }
+    
+    .dropdown-content a:hover {
+        color: #FFFFFF;
+        background-color: #00A4BD;
+    }
