@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block contenido %}
 
 <div class="container">
@@ -13,6 +15,8 @@
             <a href="{% url 'publicaciones:filtro_alimentos' %}">Alimentos</a>  
             <a href="{% url 'publicaciones:filtro_indumentaria' %}">Indumentaria</a>
             <a href="{% url 'publicaciones:filtro_plantas' %}">Plantas</a>
+            <a href="{% url 'publicaciones:filtro_bienal' %}">Bienal</a>
+            <a href="{% url 'publicaciones:filtro_emprende' %}">Emprendé</a>
 
         </div>
     </div>
@@ -24,7 +28,7 @@
             {% for p in object_list %}
                 <div class="col-md-4"> 
                     <div>
-                        <a href="{% url 'publicaciones:detalle_publicacion' p.pk %}">
+                        <a class="interact" href="{% url 'publicaciones:detalle_publicacion' p.pk %}">
                             <h6>CATEGORIA: {{p.categoria}}</h6>
                             <h3> {{p.titulo}}</h3>
                             <img src="{{p.imagen.url}}" width="200">
