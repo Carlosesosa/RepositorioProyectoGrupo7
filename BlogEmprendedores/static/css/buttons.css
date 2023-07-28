@@ -1,0 +1,383 @@
+
+/*BOTON ELIMINAR 1ERO*/
+.button-delete {
+    width: 100px;
+    height: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    background: red;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+    background: #e62222;
+   }
+   
+   .button-delete, .button-delete span {
+    transition: 200ms;
+   }
+   
+   .button-delete .textDelete {
+    transform: translateX(10px);
+    color: white;
+    font-weight: bold;
+   }
+   
+   .button-delete .icon {
+    position: absolute;
+    border-left: 1px solid #c41b1b;
+    transform: translateX(70px);
+    height: 15px;
+    width: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   }
+   
+   .button-delete svg {
+    width: 20px;
+    fill: #eee;
+   }
+   
+   .button-delete:hover {
+    background: red;
+   }
+   
+   .button-delete:hover .textDelete {
+    color: transparent;
+   }
+   
+   .button-delete:hover .icon {
+    width: 95px;
+    border-left: none;
+    transform: translateX(0);
+   }
+   
+   .button-delete:focus {
+    outline: none;
+   }
+   
+   .button-delete:active .icon svg {
+    transform: scale(0.8);
+   }
+
+
+
+/*BOTON ELIMINAR 2DO*/
+
+.button-opcion1 {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(20, 20, 20);
+    border: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+    cursor: pointer;
+    transition-duration: .3s;
+    overflow: hidden;
+    position: relative;
+}
+
+    .svgIcon {
+        width: 12px;
+        transition-duration: .3s;
+    }
+
+    .svgIcon path {
+        fill: white;
+    }
+
+    .button-opcion1:hover {
+        width: 140px;
+        border-radius: 50px;
+        transition-duration: .3s;
+        background-color: rgb(255, 69, 69);
+        align-items: center;
+    }
+
+    .button-opcion1:hover .svgIcon {
+        width: 50px;
+        transition-duration: .3s;
+        transform: translateY(60%);
+    }
+
+    .button-opcion1::before {
+        position: absolute;
+        top: -20px;
+        content: "Delete";
+        color: white;
+        transition-duration: .3s;
+        font-size: 2px;
+    }
+
+    .button-opcion1:hover::before {
+        font-size: 13px;
+        opacity: 1;
+        transform: translateY(30px);
+        transition-duration: .3s;
+    }
+
+/*BOTON ELIMINAR 3ERO*/
+
+
+.delete-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgb(20, 20, 20);
+    border: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+    cursor: pointer;
+    transition-duration: 0.3s;
+    overflow: hidden;
+    position: relative;
+    }
+
+    .delete-svgIcon {
+        width: 15px;
+        transition-duration: 0.3s;
+    }
+
+    .delete-svgIcon path {
+        fill: white;
+    }
+
+    .delete-button:hover {
+        width: 90px;
+        border-radius: 50px;
+        transition-duration: 0.3s;
+        background-color: rgb(255, 69, 69);
+        align-items: center;
+    }
+
+    .delete-button:hover .delete-svgIcon {
+        width: 20px;
+        transition-duration: 0.3s;
+        transform: translateY(60%);
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+
+    .delete-button::before {
+        display: none;
+        content: "Delete";
+        color: white;
+        transition-duration: 0.3s;
+        font-size: 2px;
+    }
+
+    .delete-button:hover::before {
+        display: block;
+        padding-right: 10px;
+        font-size: 13px;
+        opacity: 1;
+        transform: translateY(0px);
+        transition-duration: 0.3s;
+    }
+
+
+/*BOTON ELIMINAR 4TO*/
+
+
+.boton {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border: none;
+    position: relative;
+    border-radius: 10px;
+    -webkit-box-shadow: 1px 1px 5px .2px #00000035;
+    box-shadow: 1px 1px 5px .2px #00000035;
+    -webkit-transition: .2s linear;
+    transition: .2s linear;
+    transition-delay: .2s;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: space-between;
+    }
+    
+    .boton:hover {
+        width: 150px;
+        transition-delay: .2s;
+    }
+      
+    .boton:hover > .paragraph {
+        visibility: visible;
+        opacity: 1;
+        -webkit-transition-delay: .4s;
+        transition-delay: .4s;
+    }
+      
+    .boton:hover > .icon-wrapper .icon {
+        transform: scale(1.1);
+    }
+      
+    .boton:hover > .icon-wrapper .icon path {
+        stroke: black;
+    }
+      
+    .paragraph {
+        color: black;
+        visibility: hidden;
+        opacity: 0;
+        font-size: 18px;
+        margin-right: 20px;
+        padding-left: 20px;
+        -webkit-transition: .2s linear;
+        transition: .2s linear;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+      
+    .icon-wrapper {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+      
+    .icon {
+        transform: scale(.9);
+        transition: .2s linear;
+    }
+      
+    .icon path {
+        stroke: #000;
+        stroke-width: 2px;
+        -webkit-transition: .2s linear;
+        transition: .2s linear;
+    }
+
+/*BOTON CERRAR SESION*/
+
+
+/*2e2e2e     d1ccff   f3f3f3*/
+.Btn-logout {
+    --black: #000000;
+    --ch-black: #141414;
+    --eer-black: #1b1b1b;
+    --night-rider: #d1ccff;
+    --white: #ffffff;
+    --af-white: #000000;
+    --ch-white: #f3f3f3;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition-duration: .3s;
+    box-shadow: 5px 5px 10px #747477;
+    background-color: var(--night-rider);
+    }
+      
+    /* plus sign */
+    .sign {
+        width: 100%;
+        transition-duration: .3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+      
+    .sign svg {
+        width: 17px;
+    }
+      
+    .sign svg path {
+        fill: var(--af-white);
+    }
+    /* text */
+    .text {
+        position: absolute;
+        right: 0%;
+        width: 0%;
+        opacity: 0;
+        color: var(--af-white);
+        font-size: 0.9em;
+        font-weight: 600;
+        transition-duration: .3s;
+    }
+    /* hover effect on button width */
+    .Btn-logout:hover {
+        width: 125px;
+        border-radius: 5px;
+        transition-duration: .3s;
+    }
+      
+    .Btn-logout:hover .sign {
+        width: 30%;
+        transition-duration: .3s;
+        padding-left: 20px;
+    }
+    /* hover effect button's text */
+    .Btn-logout:hover .text {
+        opacity: 1;
+        width: 70%;
+        transition-duration: .3s;
+        padding-right: 10px;
+    }
+    /* button click effect*/
+    .Btn-logout:active {
+        transform: translate(2px ,2px);
+    }
+
+
+/*BOTON PARA VOLVER ATRAS*/
+
+.back-button {
+    display: flex;
+    height: 3em;
+    width: 100px;
+    align-items: center;
+    justify-content: center;
+    background-color: #eeeeee4b;
+    border-radius: 3px;
+    letter-spacing: 1px;
+    transition: all 0.2s linear;
+    cursor: pointer;
+    border: none;
+    background: #fff;
+   }
+   
+   .back-button > svg {
+    margin-right: 5px;
+    margin-left: 5px;
+    font-size: 20px;
+    transition: all 0.4s ease-in;
+   }
+   
+   .back-button:hover > svg {
+    font-size: 1.2em;
+    transform: translateX(-5px);
+   }
+   
+   .back-button:hover {
+    box-shadow: 9px 9px 33px #d1d1d1, -9px -9px 33px #ffffff;
+    transform: translateY(-2px);
+   }

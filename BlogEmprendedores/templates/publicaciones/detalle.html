@@ -4,6 +4,17 @@
 
 <div class="container">
     <div class="row mt-3">
+
+        <a href="{% url 'publicaciones:listar_publicaciones' %}">
+            <button class="back-button">
+                <svg height="16" width="16" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1024 1024">
+                    <path d="M874.690416 495.52477c0 11.2973-9.168824 20.466124-20.466124 20.466124l-604.773963 0 188.083679 188.083679c7.992021 7.992021 7.992021 20.947078 0 28.939099-4.001127 3.990894-9.240455 5.996574-14.46955 5.996574-5.239328 0-10.478655-1.995447-14.479783-5.996574l-223.00912-223.00912c-3.837398-3.837398-5.996574-9.046027-5.996574-14.46955 0-5.433756 2.159176-10.632151 5.996574-14.46955l223.019353-223.029586c7.992021-7.992021 20.957311-7.992021 28.949332 0 7.992021 8.002254 7.992021 20.957311 0 28.949332l-188.073446 188.073446 604.753497 0C865.521592 475.058646 874.690416 484.217237 874.690416 495.52477z">
+                    </path>
+                </svg>
+                <span>Volver</span>
+            </button>
+        </a>
+
         <div class="col-md-9 mx-auto mb-5">
             <div class="row">
                 <div class="col-md-6">
@@ -17,7 +28,49 @@
                 <h6>{{publicacion.autor}}</h6>                
                 <h6>{{publicacion.creado}}</h6>
                 <h6>CATEGORIA: {{publicacion.categoria}}</h6>
-                <a href="{% url 'publicaciones:borrar_publicacion' publicacion.pk %}" class="btn btn-info">Borrar</a>
+
+                <a href="{% url 'publicaciones:borrar_publicacion' publicacion.pk %}">
+                    <button class="button-delete">
+                        <span class="textDelete">Borrar</span>
+                        <span class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                <path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z">
+                                </path>
+                            </svg>
+                        </span>
+                    </button>
+                </a>
+                <hr>
+                <a href="{% url 'publicaciones:borrar_publicacion' publicacion.pk %}">
+                    <button class="button-opcion1">
+                        <svg viewBox="0 0 448 512" class="svgIcon">
+                            <path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z">
+                            </path>
+                        </svg>
+                    </button>
+                </a>
+                <hr>
+                <a href="{% url 'publicaciones:borrar_publicacion' publicacion.pk %}">
+                    <button class="delete-button">
+                        <svg class="delete-svgIcon" viewBox="0 0 448 512">
+                            <path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z">
+                            </path>
+                        </svg>
+                    </button>
+                </a>
+                <hr>
+                <a href="{% url 'publicaciones:borrar_publicacion' publicacion.pk %}">
+                    <button class="boton">
+                        <p class="paragraph"> delete </p>
+                        <span class="icon-wrapper">
+                            <svg class="icon" width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 7V18C6 19.1046 6.89543 20 8 20H16C17.1046 20 18 19.1046 18 18V7M6 7H5M6 7H8M18 7H19M18 7H16M10 11V16M14 11V16M8 7V5C8 3.89543 8.89543 3 10 3H14C15.1046 3 16 3.89543 16 5V7M8 7H16" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                </path>
+                            </svg>
+                        </span>
+                    </button>
+                </a>
+
                 </div>
             </div> 
                 
