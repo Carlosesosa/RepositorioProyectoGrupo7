@@ -2,11 +2,6 @@
     background-color: #778DA9;
 }
 
-    
-
-
-
-
 .centrar{
     margin: 0 auto;
 }
@@ -25,10 +20,6 @@
         left: 50%;
         margin: 200px 0 0 -20px; /* aplicar a top y al margen izquierdo un valor negativo para completar el centrado del elemento hijo */
     }
-
-
-
-
 
 .menu{
     margin-left: 30%;
