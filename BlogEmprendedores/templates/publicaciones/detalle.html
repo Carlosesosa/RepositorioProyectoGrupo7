@@ -5,6 +5,7 @@
 <div class="container">
     <div class="row mt-3">
 
+            <!--BOTON DE VOLVER ATRAS A PUBLICACIONES-->
         <a href="{% url 'publicaciones:listar_publicaciones' %}">
             <button class="back-button">
                 <svg height="16" width="16" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1024 1024">
@@ -14,6 +15,7 @@
                 <span>Volver</span>
             </button>
         </a>
+
 
         <div class="col-md-9 mx-auto mb-5">
             <div>
@@ -27,6 +29,8 @@
 
                 
                 <hr>
+
+                            <!--BOTON DE ELIMINAR PUBLICACIONES-->
                 <a href="{% url 'publicaciones:borrar_publicacion' publicacion.pk %}">
                     <button class="delete-button">
                         <svg class="delete-svgIcon" viewBox="0 0 448 512">
