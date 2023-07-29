@@ -3,8 +3,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="website icon" type="png" href="{% static 'img/Blog_icon.png' %}">
-  <title>EMPRENDEDORESenCHACO</title>
+  <link rel="website icon" type="png" href="{% static 'img/emprende_chaco.png' %}">
+  <title>EmprendeChaco</title>
   <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'css/buttons.css' %}">
@@ -12,12 +12,12 @@
 
 </head>
 
-<body class="colfondo">
+<body style="background-color:#E0E1DD">
 
   <div class="container">
       <div class="row">
-          <img src="{% static 'img/Blog_icon.png' %}" width="200">
-          <h1 class="titulo ml-3">EMPRENDEDORES DEL CHACO</h1>
+        <img src="{% static 'img/emprende_chaco.png' %}" width="200">
+        <h1 class="titulo ml-3"><font face="verdana">Emprende Chaco </font></h1>
       </div>
       <div class="row">
           
@@ -43,10 +43,8 @@
               
               
 
-              <a href="{% url 'logout' %}">CERRAR SESION</a>  
 
-
-              <a href="{% url 'sobrenosotros' %}">NOSOTROS</a></div>          
+       
 
           {% else %}
               <li><a href="{% url 'login' %}">INICIAR SESION</a></li>
