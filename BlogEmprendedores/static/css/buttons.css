@@ -1,3 +1,5 @@
+/*BOTON DE ELIMINAR PUBLICACIONES*/
+
 .delete-button {
     width: 40px;
     height: 40px;
@@ -64,8 +66,6 @@
 
 /*BOTON CERRAR SESION*/
 
-
-/*2e2e2e     d1ccff   f3f3f3*/
 .Btn-logout {
     --black: #000000;
     --ch-black: #141414;
