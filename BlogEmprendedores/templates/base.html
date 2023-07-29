@@ -22,9 +22,9 @@
       <div class="row">
           
           <div class="col-md-6">
-              <li><a class="interact" href="{% url 'home' %}">INICIO</a></li>
-              <li><a class="interact" href="{% url 'publicaciones:crear_publicacion' %}">PUBLICAR</a></li>
-              <li><a class="interact" href="{% url 'publicaciones:listar_publicaciones' %}">PUBLICACIONES</a></li>
+              <a class="interact" href="{% url 'home' %}">INICIO</a>
+              <a class="interact" href="{% url 'publicaciones:crear_publicacion' %}">PUBLICAR</a>
+              <a class="interact" href="{% url 'publicaciones:listar_publicaciones' %}">PUBLICACIONES</a>
           </div>  
           <div class="col-md-6">
               {% if user.is_authenticated %}
