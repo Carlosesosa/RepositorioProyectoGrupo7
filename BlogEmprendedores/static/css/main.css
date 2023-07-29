@@ -30,8 +30,7 @@
     color: rgb(0, 0, 0);
 }
 
-
-
+/*CLASE PARA DEFINIR COMPORTAMIENTO AL INTERACTUAR CON LAS PUBLICACIONES MOSTRADAS*/
 .interact{
     color: black;
 }
@@ -39,3 +38,18 @@
 .interact:hover {
     color: black;
   }
+
+
+
+/* ESTILO DE FUENTES */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+            /*ESTILO DE CUERPO DE LA PAGINA*/
+body {
+  font-family: 'Roboto', sans-serif;
+}
+            /*ESTILO DE TITULO*/
+h1 {
+  font-family: 'Roboto', sans-serif;
+}
