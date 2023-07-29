@@ -6,7 +6,7 @@
 <head>
   <link rel="website icon" type="png" href="{% static 'img/emprende_chaco.png' %}">
   <title>EmprendeChaco</title>
-  <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'css/buttons.css' %}">
 
@@ -14,49 +14,37 @@
 
 <body>
 
-  <div>
-    <div>
-      <img src="{% static 'img/emprende_chaco.png' %}" width="200">
-      <h1>
-        <font face="verdana">Emprende Chaco </font>
-      </h1>
-    </div>
-    <div>
-
-      <div>
-        <li><a href="{% url 'home' %}">INICIO</a></li>
-        <li><a href="{% url 'publicaciones:crear_publicacion' %}">PUBLICAR</a></li>
-        <li><a href="{% url 'publicaciones:listar_publicaciones' %}">PUBLICACIONES</a></li>
+  <header>
+    <div class="encabezado contenedor">
+      <div class="logo">
+        <img class="logo__img" src="{% static 'img/emprende_chaco.png' %}" width="200">
+        <h1> Emprendedores Chaco</h1>
       </div>
-      <div>
+      <nav class="navegacion">
+        <li class="navegacion__seccion"><a href="{% url 'home' %}">INICIO</a></li>
+        <li class="navegacion__seccion"><a href="{% url 'publicaciones:crear_publicacion' %}">PUBLICAR</a></li>
+        <li class="navegacion__seccion"><a href="{% url 'publicaciones:listar_publicaciones' %}">PUBLICACIONES</a></li>
+      </nav>
+      <div class="ingreso">
         {% if user.is_authenticated %}
 
         <a href="{% url 'logout' %}">
-          <button>
-            <div>
-              <svg viewBox="0 0 512 512">
-                <path
-                  d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z">
-                </path>
-              </svg>
-            </div>
-            <div>Cerrar sesión</div>
+          <button class="cerrar_sesion">
+            <svg viewBox="0 0 512 512">
+              <path
+                d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z">
+              </path>
+            </svg>
           </button>
         </a>
 
-
-
-
-
-
         {% else %}
-        <li><a href="{% url 'login' %}">INICIAR SESION</a></li>
-        <li><a href="{% url 'usuarios:registrar' %}">REGISTRARSE</a></li>
+        <li class="login"><a href="{% url 'login' %}">INICIAR SESION</a></li>
+        <li class="register"><a href="{% url 'usuarios:registrar' %}">REGISTRARSE</a></li>
         {% endif %}
       </div>
-
     </div>
-  </div>
+  </header>
   <hr>
   <div>
     {% block contenido %}
