@@ -128,3 +128,24 @@ header {
     background-color: var(--color_secundario);
     width: 4rem;
 }
+
+/* Categorias */
+.categorias {
+    z-index: 10;
+    background-color: var(--color_principal);
+}
+
+.categorias a{
+    color: var(--color_secundario);
+}
+
+.categorias a:hover{
+    color: var(--color_principal);
+    background-color: var(--color_secundario);
+}
+
+/* Publicaciones */
+
+.publicaciones{
+    margin: 5rem auto;
+}
