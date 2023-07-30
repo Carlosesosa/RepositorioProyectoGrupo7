@@ -54,5 +54,5 @@ class BorrarPublicacion(DeleteView):
 class ModificarPublicacion(UpdateView):
     model = Publicacion
     form_class = Form_Alta
-    template_name = 'publicaciones/crear.html'
+    template_name = 'publicaciones/modificar.html'
     success_url = reverse_lazy('publicaciones:listar_publicaciones')
