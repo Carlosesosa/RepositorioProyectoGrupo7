@@ -7,7 +7,7 @@
 
     <!--FILTRAR CATEGORIAS DESPLEGABLE: -->
     <div class="dropdown">
-        <button>CATEGORIAS</button>
+        <button class="dropdown-button">CATEGORIAS</button>
         <div class="categorias dropdown-content">
             <a href="{% url 'publicaciones:listar_publicaciones' %}">TODAS</a>
             <a href="{% url 'publicaciones:filtro_alimentos' %}">Alimentos</a>
@@ -30,7 +30,7 @@
                     <h6>CATEGORIA: {{p.categoria}}</h6>
                     <h3> {{p.titulo}}</h3>
                 </div>
-                <img src="{{p.imagen.url}}" width="250">
+                <img src="{{p.imagen.url}}">
                 <div>
                     <h6>FECHA: {{p.creado}}</h6>
                     <h6>AUTOR: {{p.autor}}</h6>

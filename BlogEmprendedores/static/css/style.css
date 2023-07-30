@@ -175,9 +175,12 @@ header {
 
 .publicacion__info{
     height: 15%;
+    margin-bottom: 3rem;
 }
+
 .publicacion img{
     width: 95%;
+    margin: 0 auto;
     height: 50%;
 }
 
