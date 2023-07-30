@@ -101,6 +101,12 @@ header {
     align-items: center;
 }
 
+/* Contenido principal */
+.contenido-principal{
+    width: 95%;
+    margin: 2rem auto;
+}
+
 /* Ingreso */
 
 .ingreso{
