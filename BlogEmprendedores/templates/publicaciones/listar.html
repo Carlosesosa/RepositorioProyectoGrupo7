@@ -8,40 +8,39 @@
     <!--FILTRAR CATEGORIAS DESPLEGABLE: -->
     <div class="dropdown">
         <button>CATEGORIAS</button>
-        <div class="dropdown-content">
+        <div class="categorias dropdown-content">
             <a href="{% url 'publicaciones:listar_publicaciones' %}">TODAS</a>
-            <a href="{% url 'publicaciones:filtro_alimentos' %}">Alimentos</a>  
+            <a href="{% url 'publicaciones:filtro_alimentos' %}">Alimentos</a>
             <a href="{% url 'publicaciones:filtro_indumentaria' %}">Indumentaria</a>
             <a href="{% url 'publicaciones:filtro_plantas' %}">Plantas</a>
             <a href="{% url 'publicaciones:filtro_bienal' %}">Bienal</a>
             <a href="{% url 'publicaciones:filtro_emprende' %}">Emprendé</a>
-            <a href="{% url 'sobrenosotros' %}">NOSOTROS</a></div>   
-
+            <a href="{% url 'sobrenosotros' %}">NOSOTROS</a>
         </div>
+
     </div>
+</div>
 
 
-    <div class="row mt-3">
-        <div class="col-md-9 mx-auto mb-5">
-            <div class="row">
-            {% for p in object_list %}
-                <div class="col-md-4"> 
-                    <div>
-                        <a class="interact" href="{% url 'publicaciones:detalle_publicacion' p.pk %}">
-                            <h6>CATEGORIA: {{p.categoria}}</h6>
-                            <h3> {{p.titulo}}</h3>
-                            <img src="{{p.imagen.url}}" width="250">
-                            <h6>FECHA: {{p.creado}}</h6>
-                            <h6>AUTOR: {{p.autor}}</h6>
-                            <hr>
-                        </a>
-                    </div>
-                </div>
-                               
-            {% endfor %}
-            </div>  
+<div class="publicaciones contenedor">
+    <div class="row">
+        {% for p in object_list %}
+        <div class="col-md-4">
+            <div>
+                <a class="interact" href="{% url 'publicaciones:detalle_publicacion' p.pk %}">
+                    <h6>CATEGORIA: {{p.categoria}}</h6>
+                    <h3> {{p.titulo}}</h3>
+                    <img src="{{p.imagen.url}}" width="250">
+                    <h6>FECHA: {{p.creado}}</h6>
+                    <h6>AUTOR: {{p.autor}}</h6>
+                    <hr>
+                </a>
+            </div>
         </div>
+
+        {% endfor %}
     </div>
+</div>
 </div>
 
 {% endblock contenido %}
