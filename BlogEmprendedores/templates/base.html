@@ -4,9 +4,9 @@
 <html>
 
 <head>
-    <link rel="website icon" type="png" href="{% static 'img/emprende_chaco.png' %}">
-    <title>Emprende Chaco</title>
-  
+  <link rel="website icon" type="png" href="{% static 'img/emprende_chaco.png' %}">
+  <title>Emprende Chaco</title>
+
   <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
   <link rel="website icon" type="png" href="{% static 'img/emprende_chaco.png' %}">
   <title>EmprendeChaco</title>
@@ -22,12 +22,13 @@
     <div class="encabezado contenedor">
       <div class="logo">
         <img class="logo__img" src="{% static 'img/emprende_chaco.png' %}" width="200">
-        <h2> Emprendedores Chaco</h2>
+        <a href="{% url 'home' %}"><h2> Emprendedores Chaco</h2></a>
       </div>
       <nav class="navegacion">
         <li class="navegacion__seccion"><a href="{% url 'home' %}">INICIO</a></li>
         <li class="navegacion__seccion"><a href="{% url 'publicaciones:crear_publicacion' %}">PUBLICAR</a></li>
         <li class="navegacion__seccion"><a href="{% url 'publicaciones:listar_publicaciones' %}">PUBLICACIONES</a></li>
+        <li class="navegacion__seccion"><a href="{% url 'sobrenosotros' %}">NOSOTROS</a></li>
       </nav>
       <div class="ingreso">
         {% if user.is_authenticated %}
@@ -49,13 +50,20 @@
       </div>
     </div>
   </header>
-  <hr>
-  <div>
+  <main class="contenido-principal">
     {% block contenido %}
 
     {% endblock contenido %}
-  </div>
-  </div>
+  </main>
+
+  <footer class="footer" >
+    <div class="contenedor footer__logo">
+      <div class="logo">
+        <img class="logo__img" src="{% static 'img/emprende_chaco.png' %}" width="200">
+        <a href="{% url 'home' %}"><h2> Emprendedores Chaco</h2></a>
+      </div>
+    </div>
+  </footer>
 </body>
 
 </html>
