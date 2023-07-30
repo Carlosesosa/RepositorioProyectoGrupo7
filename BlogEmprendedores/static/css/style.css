@@ -8,6 +8,7 @@
 html {
     box-sizing: border-box;
     font-size: 62.5%;
+    
 }
 
 *, *:before, *:after {
@@ -18,6 +19,8 @@ body {
     background-color: var(--color_secundario);
     font-size: 1.6rem;
     line-height: 1.5;
+    padding: 0;
+    margin: 0;
 }
 
 li {
@@ -38,6 +41,7 @@ header {
     background-color: var(--color_principal);
     height: fit-content;
     padding: 2rem;
+    margin: 0;
 }
 
 
@@ -113,6 +117,7 @@ header {
 .contenido-principal{
     width: 95%;
     margin: 2rem auto;
+    min-height: 100vh;
 }
 
 /* Ingreso */
@@ -154,12 +159,31 @@ header {
 }
 
 .categorias a:hover{
-    color: var(--color_principal);
-    background-color: var(--color_secundario);
+    color: var(--blanco);
+    background-color: var(--fondo);
 }
 
 /* Publicaciones */
 
 .publicaciones{
-    margin: 5rem auto;
+    margin: 10rem auto;
+}
+
+.publicacion{
+    height: 50rem;
+}
+
+.publicacion__info{
+    height: 15%;
+}
+.publicacion img{
+    width: 95%;
+    height: 50%;
+}
+
+
+/* Página login */
+.pag-login{
+    padding: 10rem;
+    background-color: var(--fondo);
 }

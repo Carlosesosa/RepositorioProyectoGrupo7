@@ -24,22 +24,23 @@
 <div class="publicaciones contenedor">
     <div class="row">
         {% for p in object_list %}
-        <div class="col-md-4">
-            <div>
-                <a class="interact" href="{% url 'publicaciones:detalle_publicacion' p.pk %}">
+        <div class="publicacion col-md-4 col-sm-6">
+            <a class="interact" href="{% url 'publicaciones:detalle_publicacion' p.pk %}">
+                <div class="publicacion__info">
                     <h6>CATEGORIA: {{p.categoria}}</h6>
                     <h3> {{p.titulo}}</h3>
-                    <img src="{{p.imagen.url}}" width="250">
+                </div>
+                <img src="{{p.imagen.url}}" width="250">
+                <div>
                     <h6>FECHA: {{p.creado}}</h6>
                     <h6>AUTOR: {{p.autor}}</h6>
-                    <hr>
-                </a>
-            </div>
+                </div>
+
+            </a>
         </div>
 
         {% endfor %}
     </div>
-</div>
 </div>
 
 {% endblock contenido %}
