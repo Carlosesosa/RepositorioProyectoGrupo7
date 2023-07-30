@@ -51,8 +51,8 @@ a, a:link, a:visited, a:active {
 
     .delete-button::before {
         display: none;
-        content: "Delete";
         color: white;
+        content: "Delete";
         transition-duration: 0.3s;
         font-size: 2px;
     }
