@@ -45,7 +45,6 @@ def Filtro_Categorias(request, pk):
     ctx['object_list'] = filtradas
     return render(request, 'publicaciones/listar.html', ctx)
 
-
 class BorrarPublicacion(DeleteView):
     model = Publicacion
     success_url = reverse_lazy('publicaciones:listar_publicaciones')
@@ -56,3 +55,4 @@ class ModificarPublicacion(UpdateView):
     form_class = Form_Alta
     template_name = 'publicaciones/modificar.html'
     success_url = reverse_lazy('publicaciones:listar_publicaciones')
+
