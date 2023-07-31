@@ -9,7 +9,6 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
-
 def Agregar(request,pk):
     com = request.POST.get('comentario', None)
     usuario = request.user
@@ -31,5 +30,3 @@ class ModificarComentario(UpdateView):
     template_name = 'comentarios/modificar.html'
     def get_success_url(self):
         return reverse_lazy('publicaciones:detalle_publicacion', kwargs={'pk': self.object.publicacion.pk})
-
-

@@ -1,4 +1,29 @@
 {% extends 'base.html' %}
 
 {% block contenido %}
+
+<h1 style="font-size: 40px;color: black;font-weight: bold;">LO MAS RECIENTE</h1><hr>
+        
+
+<div class="publicaciones contenedor">
+    <div class="row">
+            {% for p in object_list %}
+            <div class="publicacion col-md-4 col-sm-6">
+                <a class="interact" href="{% url 'publicaciones:detalle_publicacion' p.pk %}">
+                    <div class="publicacion__info">
+                        <h6>CATEGORIA: {{p.categoria}}</h6>
+                        <h2> {{p.titulo}}</h2>
+                    </div>
+                    <img src="{{p.imagen.url}}">
+                    <div>
+                        <h6>FECHA: {{p.creado}}</h6>
+                        <h6>AUTOR: {{p.autor}}</h6>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+    </div>
+</div>
+
+
 {% endblock contenido %}
