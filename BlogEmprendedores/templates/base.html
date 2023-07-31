@@ -27,7 +27,9 @@
       </div>
       <nav class="navegacion">
         <li class="navegacion__seccion"><a href="{% url 'home' %}">INICIO</a></li>
+        {% if user.is_staff %}
         <li class="navegacion__seccion"><a href="{% url 'publicaciones:crear_publicacion' %}">PUBLICAR</a></li>
+        {% endif %}
         <li class="navegacion__seccion"><a href="{% url 'publicaciones:listar_publicaciones' %}">PUBLICACIONES</a></li>
         <li class="navegacion__seccion"><a href="{% url 'sobrenosotros' %}">NOSOTROS</a></li>
       </nav>
@@ -52,6 +54,7 @@
       </div>
     </div>
   </header>
+
   <main class="contenido-principal">
     {% block contenido %}
 

@@ -3,44 +3,58 @@
 {% block contenido %}
 
 <div class="container">
-
+<h1 style="font-size: 40px;color: black;font-weight: bold;">PUBLICACIONES</h1><hr>
+        <details style="background-color: #5C7490;">
+            <summary style="font-size: 20px;font-weight: bold;" >Filtrar por...</summary>
+            <details style="text-indent: 20px;">
+                <summary style="font-size: 15px;font-weight: bold;" >Categoria</summary>
+                    <li style="text-indent: 60px;"><a href="{% url 'publicaciones:listar_publicaciones' %}" style="color: black;">Todas</a></li>
+                    <li style="text-indent: 60px;"><a href="?fl=alimentos" style="color: black;">Alimentos</a></li>
+                    <li style="text-indent: 60px;"><a href="?fl=indumentaria" style="color: black;">Indumentaria</a></li>
+                    <li style="text-indent: 60px;"><a href="?fl=plantas" style="color: black;">Plantas</a></li>
+                    <li style="text-indent: 60px;"><a href="?fl=emprendé" style="color: black;">Emprendé</a></li>
+            </details>
+            <details style="text-indent: 20px;">
+                <summary style="font-size: 15px;font-weight: bold;" >Alfabetico</summary>
+                    <li style="text-indent: 60px;"><a href="{{request.get_full_path}}&orden=alasc" style="color: black;">Ascendente</a></li>
+                    <li style="text-indent: 60px;"><a href="?orden=aldes" style="color: black;">Descendente</a></li>
+            </details>
+            <details style="text-indent: 20px;">
+                <summary style="font-size: 15px;font-weight: bold;" >Fecha de publicacion</summary>
+                    <li style="text-indent: 60px;"><a href="?orden=anasc" style="color: black;">Ascendente</a></li>
+                    <li style="text-indent: 60px;"><a href="?orden=andes" style="color: black;">Descendente</a></li>
+            </details>
+        </details>
 
     <!--FILTRAR CATEGORIAS DESPLEGABLE: -->
-    <div class="dropdown">
-        <button class="dropdown-button">CATEGORIAS</button>
-        <div class="categorias dropdown-content">
-            <a href="{% url 'publicaciones:listar_publicaciones' %}">TODAS</a>
-            <a href="{% url 'publicaciones:filtro_alimentos' %}">Alimentos</a>
-            <a href="{% url 'publicaciones:filtro_indumentaria' %}">Indumentaria</a>
-            <a href="{% url 'publicaciones:filtro_plantas' %}">Plantas</a>
-            <a href="{% url 'publicaciones:filtro_bienal' %}">Bienal</a>
-            <a href="{% url 'publicaciones:filtro_emprende' %}">Emprendé</a>
-            <a href="">Mis Publicaciones</a>
-        </div>
-
-    </div>
+   
+    
 </div>
 
 
 <div class="publicaciones contenedor">
     <div class="row">
-        {% for p in object_list %}
-        <div class="publicacion col-md-4 col-sm-6">
-            <a class="interact" href="{% url 'publicaciones:detalle_publicacion' p.pk %}">
-                <div class="publicacion__info">
-                    <h6>CATEGORIA: {{p.categoria}}</h6>
-                    <h3> {{p.titulo}}</h3>
-                </div>
-                <img src="{{p.imagen.url}}">
-                <div>
-                    <h6>FECHA: {{p.creado}}</h6>
-                    <h6>AUTOR: {{p.autor}}</h6>
-                </div>
-
-            </a>
-        </div>
-
-        {% endfor %}
+        {% if error %}
+            <div class="alert alert-danger">
+                <h1 style="color: red; font-size: 50px;">¡¡{{error}}!!</h1>
+            </div>
+        {% else %}
+            {% for p in object_list %}
+            <div class="publicacion col-md-4 col-sm-6">
+                <a class="interact" href="{% url 'publicaciones:detalle_publicacion' p.pk %}">
+                    <div class="publicacion__info">
+                        <h6>CATEGORIA: {{p.categoria}}</h6>
+                        <h2> {{p.titulo}}</h2>
+                    </div>
+                    <img src="{{p.imagen.url}}">
+                    <div>
+                        <h6>FECHA: {{p.creado}}</h6>
+                        <h6>AUTOR: {{p.autor}}</h6>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        {% endif %}
     </div>
 </div>
 
