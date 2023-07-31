@@ -62,15 +62,27 @@
             </div>
             <hr>
             <h3>COMENTARIOS</h3>
-            <div class="row" style="margin-bottom: 200px">
+            <div class="row">
                 <form method="POST" action="{% url 'comentarios:agregar_comentario' publicacion.pk %}">{%csrf_token%}
 
                     <textarea type="text" name="comentario" style="width: 800px"> 
 
                     </textarea>
 
-                    <input type="submit" name="" value="Guardar">
+                    <input type="submit" name="" value="Enviar">
                 </form>            
+            </div>
+            <hr>
+            <div>
+                {% for c in publicacion.MisComentarios %}
+                    <div>   
+                        <h5>{{c.usuario}}</h5>
+                        <h4>{{c.texto}}</h4>
+                        <h5>{{c.creado}}</h5>
+                        <a href="{% url 'comentarios:borrar_comentario' c.pk %}" class="btn btn-info">Borrar</a>
+                        <a href="{% url 'comentarios:modificar_comentario' c.pk %}" class="btn btn-info">Editar</a>
+                    </div><hr>
+                {% endfor %}
             </div>
             </div>
         </div>

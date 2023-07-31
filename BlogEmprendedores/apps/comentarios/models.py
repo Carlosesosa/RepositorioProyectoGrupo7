@@ -11,5 +11,5 @@ class Comentario(models.Model):
     publicacion = models.ForeignKey(Publicacion, on_delete = models.CASCADE)
     
     def __str__(self):
-        return f"{usuario}-{publicacion}"
+        return self.texto
 
