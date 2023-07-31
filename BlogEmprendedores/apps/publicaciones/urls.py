@@ -25,5 +25,7 @@ urlpatterns = [
    path('Filtro/5', views.Filtro_Categorias, name="filtro_emprende"),
 
    path('Borrar/<int:pk>', views.BorrarPublicacion.as_view(), name="borrar_publicacion"),
+
+   path('Modificar/<int:pk>', views.ModificarPublicacion.as_view(), name="modificar_publicacion"),
    
 ]

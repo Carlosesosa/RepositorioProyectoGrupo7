@@ -49,3 +49,10 @@ def Filtro_Categorias(request, pk):
 class BorrarPublicacion(DeleteView):
     model = Publicacion
     success_url = reverse_lazy('publicaciones:listar_publicaciones')
+
+
+class ModificarPublicacion(UpdateView):
+    model = Publicacion
+    form_class = Form_Alta
+    template_name = 'publicaciones/modificar.html'
+    success_url = reverse_lazy('publicaciones:listar_publicaciones')
