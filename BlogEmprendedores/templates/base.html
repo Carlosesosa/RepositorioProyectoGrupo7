@@ -34,6 +34,7 @@
       <div class="ingreso">
         {% if user.is_authenticated %}
 
+        {{user.username}}
         <a href="{% url 'logout' %}">
           <button class="cerrar_sesion">
             <svg viewBox="0 0 512 512">

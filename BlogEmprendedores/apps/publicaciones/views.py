@@ -56,3 +56,5 @@ class ModificarPublicacion(UpdateView):
     template_name = 'publicaciones/modificar.html'
     success_url = reverse_lazy('publicaciones:listar_publicaciones')
 
+
+

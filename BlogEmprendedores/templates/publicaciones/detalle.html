@@ -40,6 +40,7 @@
 
                 <!--BOTON DE ELIMINAR PUBLICACIONES-->
                 <div class="row">
+                    {% if user.is_staff %}
                     <a href="{% url 'publicaciones:borrar_publicacion' publicacion.pk %}">
                         <button class="delete-button">
                             <svg class="delete-svgIcon" viewBox="0 0 448 512">
@@ -58,11 +59,14 @@
                             </svg>
                         </button>
                     </a>
+                    <hr>
+                    {% endif %}
                 </div>
             </div>
-            <hr>
+            
             <h3>COMENTARIOS</h3>
             <div class="row">
+                {% if user.is_authenticated %}
                 <form method="POST" action="{% url 'comentarios:agregar_comentario' publicacion.pk %}">{%csrf_token%}
 
                     <textarea type="text" name="comentario" style="width: 800px"> 
@@ -70,15 +74,16 @@
                     </textarea>
 
                     <input type="submit" name="" value="Enviar">
-                </form>            
+                </form>     
+                {% endif %}
             </div>
             <hr>
             <div>
                 {% for c in publicacion.MisComentarios %}
                     <div>   
                         <h5>{{c.usuario}}</h5>
-                        <h4>{{c.texto}}</h4>
-                        <h5>{{c.creado}}</h5>
+                        <h3>{{c.texto}}</h3>
+                        <h6>{{c.creado}}</h6>
                         <a href="{% url 'comentarios:borrar_comentario' c.pk %}" class="btn btn-info">Borrar</a>
                         <a href="{% url 'comentarios:modificar_comentario' c.pk %}" class="btn btn-info">Editar</a>
                     </div><hr>
