@@ -5,8 +5,10 @@ from apps.comentarios.models import Comentario
 
 from django.urls import reverse_lazy
 from .forms import Form_Modificar
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
+
 
 def Agregar(request,pk):
     com = request.POST.get('comentario', None)
