@@ -60,9 +60,21 @@
                     </a>
                 </div>
             </div>
+            <hr>
+            <h3>COMENTARIOS</h3>
+            <div class="row" style="margin-bottom: 200px">
+                <form method="POST" action="{% url 'comentarios:agregar_comentario' publicacion.pk %}">{%csrf_token%}
+
+                    <textarea type="text" name="comentario" style="width: 800px"> 
+
+                    </textarea>
+
+                    <input type="submit" name="" value="Guardar">
+                </form>            
+            </div>
+            </div>
         </div>
     </div>
-</div>
 </div>
 
 {% endblock contenido %}
