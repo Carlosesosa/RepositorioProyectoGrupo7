@@ -19,14 +19,15 @@ def Agregar(request,pk):
 
 class BorrarComentario(DeleteView):
     model = Comentario
-    success_url = reverse_lazy('publicaciones:listar_publicaciones')
+    def get_success_url(self):
+        return reverse_lazy('publicaciones:detalle_publicacion', kwargs={'pk': self.object.publicacion.pk})
 
     
 class ModificarComentario(UpdateView):
     model = Comentario
     form_class = Form_Modificar
     template_name = 'comentarios/modificar.html'
-    success_url = reverse_lazy('publicaciones:listar_publicaciones')
-
+    def get_success_url(self):
+        return reverse_lazy('publicaciones:detalle_publicacion', kwargs={'pk': self.object.publicacion.pk})
 
 

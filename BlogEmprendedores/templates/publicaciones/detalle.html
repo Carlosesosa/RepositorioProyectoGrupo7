@@ -77,8 +77,8 @@
                 {% for c in publicacion.MisComentarios %}
                     <div>   
                         <h5>{{c.usuario}}</h5>
-                        <h4>{{c.texto}}</h4>
-                        <h5>{{c.creado}}</h5>
+                        <h3>{{c.texto}}</h3>
+                        <h6>{{c.creado}}</h6>
                         <a href="{% url 'comentarios:borrar_comentario' c.pk %}" class="btn btn-info">Borrar</a>
                         <a href="{% url 'comentarios:modificar_comentario' c.pk %}" class="btn btn-info">Editar</a>
                     </div><hr>
