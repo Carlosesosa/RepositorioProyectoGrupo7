@@ -69,18 +69,12 @@
                 </div>
             
             </div>
-<<<<<<< HEAD
 
             <div>    
                 <hr>        
-                <h3 style="font-size: 25px;font-weight: bold;">COMENTARIOS:</h3>
-=======
-<<<<<<< Updated upstream
-            
-            <h3 style="font-size: 25px;font-weight: bold;">COMENTARIOS</h3>
+                <h3 style="font-size: 25px;font-weight: bold;">COMENTARIOS:</h3>            
             
             <div>
->>>>>>> 65ef429206c1081fc742627f3baa25ce51b1e8a1
                 {% if user.is_authenticated %}
                 <hr>
                     <details>
@@ -92,25 +86,8 @@
 
                                 <textarea type="text" name="comentario" style="width: 600px"></textarea>
                         
-<<<<<<< HEAD
                                 <input type="submit" value="Enviar">
-                            </form>     
-=======
-                        <form method="POST" action="{% url 'comentarios:agregar_comentario' publicacion.pk %}">{%csrf_token%}
-=======
-            <hr>
-            <h2>COMENTARIOS</h2>
-            <div class="row">
-                <form method="POST" action="{% url 'comentarios:agregar_comentario' publicacion.pk %}">{%csrf_token%}
->>>>>>> Stashed changes
-
-                            <textarea type="text" name="comentario" style="width: 600px"> 
-
-                            </textarea>
-
-                            <input type="submit" value="Enviar">
-                        </form>     
->>>>>>> 65ef429206c1081fc742627f3baa25ce51b1e8a1
+                            </form>         
                         
                         </div>
                     </details>
