@@ -44,6 +44,14 @@ header {
     margin: 0;
 }
 
+@media (min-width: 960px) {
+    header{
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+}
+
 
 .encabezado {
     display: grid;
@@ -167,23 +175,38 @@ header {
 
 .publicaciones{
     margin: 10rem auto;
+    background-color: var(--fondo);
+    padding: 2rem;
 }
 
 .publicacion{
     height: 50rem;
+    padding: 2rem;
 }
 
 .publicacion__info{
-    height: 15%;
+    height: fit-content;
     margin-bottom: 3rem;
+    padding: 1rem;
+    background-color: var(--color_secundario);
+}
+
+.publicacion__info h2{
+    text-align: center;
 }
 
 .publicacion img{
-    width: 95%;
-    margin: 0 auto;
+    width: 100%;
+    margin: 1rem auto ;
     height: 50%;
 }
 
+/* Inicio */
+.inicio-titulo{
+    font-weight: bold;
+    color: var(--color_principal);
+    font-size: 5rem;
+}
 
 /* Página login */
 .pag-login{

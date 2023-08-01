@@ -41,12 +41,10 @@
                     <div class="publicacion__info">
                         <h6>CATEGORIA: {{p.categoria}}</h6>
                         <h2 style="text-indent: bold; font-size: 25px;"> {{p.titulo}}</h2>
-                    </div>
-                    <img src="{{p.imagen.url}}">
-                    <div>
                         <h6>FECHA: {{p.creado}}</h6>
                         <h6>AUTOR: {{p.autor}}</h6>
                     </div>
+                    <img src="{{p.imagen.url}}">
                 </a>
             </div>
             {% endfor %}
