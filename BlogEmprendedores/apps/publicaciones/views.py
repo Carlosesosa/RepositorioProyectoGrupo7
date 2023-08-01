@@ -60,33 +60,25 @@ def ListarPublicacionesFunc(request):
 
 
 def DetallePublicacionF(request, pk):
-    context = {}
-    publi = Publicacion.objects.get(id = pk)
-    context['publicacion'] = publi
-    return render(request, 'publicaciones/detalle.html', context)
-
-
-class Categorias(ListView):
-    model = Categoria
-    template_name = 'publicaciones/categoria.html'
-
-
-def Filtro_Categorias(request, pk):
     ctx = {}
-    cate = Categoria.objects.get(id = pk)
-    filtradas = Publicacion.objects.filter(categoria = cate)
-    ctx['object_list'] = filtradas
-    return render(request, 'publicaciones/listar.html', ctx)
+    publi = Publicacion.objects.get(id = pk)
+    ctx['publicacion'] = publi
+    return render(request, 'publicaciones/detalle.html', ctx)
 
-class BorrarPublicacion(DeleteView):
+
+class BorrarPublicacion(UserPassesTestMixin,DeleteView):
     model = Publicacion
     success_url = reverse_lazy('publicaciones:listar_publicaciones')
+    def test_func(self):
+        return self.request.user.is_staff
 
 
-class ModificarPublicacion(UpdateView):
+class ModificarPublicacion(UserPassesTestMixin,UpdateView):
     model = Publicacion
     form_class = Form_Alta
     template_name = 'publicaciones/modificar.html'
     success_url = reverse_lazy('publicaciones:listar_publicaciones')
+    def test_func(self):
+        return self.request.user.is_staff
 
 

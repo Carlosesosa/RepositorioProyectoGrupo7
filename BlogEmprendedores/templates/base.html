@@ -5,11 +5,11 @@
 
 <head>
   <link rel="website icon" type="png" href="{% static 'img/emprende_chaco.png' %}">
-  <title>Emprende Chaco</title>
+
+  <title>Emprende | Chaco</title>
+
 
   <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
-  <link rel="website icon" type="png" href="{% static 'img/emprende_chaco.png' %}">
-  <title>EmprendeChaco</title>
   <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'css/normalize.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'css/buttons.css' %}">
@@ -36,7 +36,7 @@
       <div class="ingreso">
         {% if user.is_authenticated %}
 
-        {{user.username}}
+        {{user.username|upper}}
         <a href="{% url 'logout' %}">
           <button class="cerrar_sesion">
             <svg viewBox="0 0 512 512">

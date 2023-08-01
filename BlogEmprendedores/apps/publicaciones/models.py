@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
 # Create your models here.
 class Categoria(models.Model):
     nombre = models.CharField(max_length=80)
@@ -17,7 +18,7 @@ class Publicacion(models.Model):
     imagen = models.ImageField(upload_to = 'publicaciones')
     categoria = models.ForeignKey(Categoria, on_delete = models.CASCADE)
 
-    def MisComentarios(self):
+    def misComentarios(self):
         return self.comentario_set.all()
 
     def __str__(self):

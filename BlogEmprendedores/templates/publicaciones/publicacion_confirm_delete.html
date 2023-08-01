@@ -3,10 +3,10 @@
 {% block contenido %}
 <div class="col-md-9 mx-auto mb-5">
     <form method="post">{% csrf_token %}
-        <h5><p>Estas seguro que desea eliminar la publicacion: </p></h5>
-        <h5><p>"{{ object }}"  ?</p></h5>
+        <h3><p>Estas seguro que desea eliminar la publicacion: </p></h3>
+        <h3><p>"{{ object }}"  ?</p></h3>
         {{ form }}
-        <input type="submit" class="btn btn-info" value="CONFIRMAR">
+        <input type="submit" class="btn btn-info" style="background-color: red;" value="Eliminar">
     </form>
 </div>
 {% endblock contenido %}

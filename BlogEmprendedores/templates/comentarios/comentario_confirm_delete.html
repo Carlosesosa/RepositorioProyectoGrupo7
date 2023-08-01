@@ -2,10 +2,14 @@
 
 {% block contenido %}
 	
-	<form method="post">{% csrf_token %}
-    	<p>Estas seguro que deseas eliminar: "{{ object }}"?</p>
-	    {{ form }}
-	    <input type="submit" value="CONFIRMAR">
-	</form>
-
+<div class="col-md-9 mx-auto mb-5">
+    <form method="post">{% csrf_token %}
+        <h3><p>Estas seguro que desea eliminar la publicacion: </p></h3>
+        <h3><p>"{{ object }}"  ?</p></h3>
+        {{ form }}
+        <input type="submit" class="btn btn-info" style="background-color: red;" value="Eliminar">
+    </form>
+</div>
 {% endblock contenido %}
+
+
