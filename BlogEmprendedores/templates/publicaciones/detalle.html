@@ -29,11 +29,12 @@
             <div>
 
                 <h1>{{publicacion.titulo}}</h1>
-                <img src="{{publicacion.imagen.url}}" height="400">
-                <h4>{{publicacion.contenido}}</h4>
-                <h5>CREADOR: {{publicacion.autor}}</h5>
-                <h5>{{publicacion.creado}}</h5>
-                <h5>CATEGORIA: {{publicacion.categoria}}</h5>
+                <img src="{{publicacion.imagen.url}}">
+                <p>{{publicacion.contenido}}</p>
+                <hr>
+                <h3>CREADOR: {{publicacion.autor}}</h3>
+                <h3>{{publicacion.creado}}</h3>
+                <h3>CATEGORIA: {{publicacion.categoria}}</h3>
 
 
                 <hr>
@@ -63,6 +64,7 @@
                     {% endif %}
                 </div>
             </div>
+<<<<<<< Updated upstream
             
             <h3 style="font-size: 25px;font-weight: bold;">COMENTARIOS</h3>
             
@@ -74,6 +76,12 @@
                     <div class="row">
                         
                         <form method="POST" action="{% url 'comentarios:agregar_comentario' publicacion.pk %}">{%csrf_token%}
+=======
+            <hr>
+            <h2>COMENTARIOS</h2>
+            <div class="row">
+                <form method="POST" action="{% url 'comentarios:agregar_comentario' publicacion.pk %}">{%csrf_token%}
+>>>>>>> Stashed changes
 
                             <textarea type="text" name="comentario" style="width: 600px"> 
 
