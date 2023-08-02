@@ -2,52 +2,54 @@
 
 {% block contenido %}
 
-<div class="container">
-<h1 style="font-size: 40px;color: black;font-weight: bold;">PUBLICACIONES</h1><hr>
+<div class="contenedor">
+    <h1 class="publicaciones-titulo">PUBLICACIONES</h1>
+    <hr>
     <details style="background-color: #5C7490;">
-        <summary style="font-size: 20px;font-weight: bold;" >Filtrar por...</summary>
+        <summary style="font-size: 20px;font-weight: bold;">Filtrar por...</summary>
         <details style="text-indent: 20px;">
-            <summary style="font-size: 15px;font-weight: bold;" >Categoria</summary>
-                <li style="text-indent: 60px;"><a href="{% url 'publicaciones:listar_publicaciones' %}" style="color: black;">Todas</a></li>
-                <li style="text-indent: 60px;"><a href="?fl=Alimentos" style="color: black;">Alimentos</a></li>
-                <li style="text-indent: 60px;"><a href="?fl=Indumentaria" style="color: black;">Indumentaria</a></li>
-                <li style="text-indent: 60px;"><a href="?fl=Plantas" style="color: black;">Plantas</a></li>
-                <li style="text-indent: 60px;"><a href="?fl=Emprendé" style="color: black;">Emprendé</a></li>
+            <summary style="font-size: 15px;font-weight: bold;">Categoria</summary>
+            <li style="text-indent: 60px;"><a href="{% url 'publicaciones:listar_publicaciones' %}"
+                    style="color: black;">Todas</a></li>
+            <li style="text-indent: 60px;"><a href="?fl=Alimentos" style="color: black;">Alimentos</a></li>
+            <li style="text-indent: 60px;"><a href="?fl=Indumentaria" style="color: black;">Indumentaria</a></li>
+            <li style="text-indent: 60px;"><a href="?fl=Plantas" style="color: black;">Plantas</a></li>
+            <li style="text-indent: 60px;"><a href="?fl=Emprendé" style="color: black;">Emprendé</a></li>
         </details>
         <details style="text-indent: 20px;">
-            <summary style="font-size: 15px;font-weight: bold;" >Alfabetico</summary>
-                <li style="text-indent: 60px;"><a href="?orden=alasc" style="color: black;">Ascendente</a></li>
-                <li style="text-indent: 60px;"><a href="?orden=aldes" style="color: black;">Descendente</a></li>
+            <summary style="font-size: 15px;font-weight: bold;">Alfabetico</summary>
+            <li style="text-indent: 60px;"><a href="?orden=alasc" style="color: black;">Ascendente</a></li>
+            <li style="text-indent: 60px;"><a href="?orden=aldes" style="color: black;">Descendente</a></li>
         </details>
         <details style="text-indent: 20px;">
-            <summary style="font-size: 15px;font-weight: bold;" >Fecha de publicacion</summary>
-                <li style="text-indent: 60px;"><a href="?orden=anasc" style="color: black;">Ascendente</a></li>
-                <li style="text-indent: 60px;"><a href="?orden=andes" style="color: black;">Descendente</a></li>
+            <summary style="font-size: 15px;font-weight: bold;">Fecha de publicacion</summary>
+            <li style="text-indent: 60px;"><a href="?orden=anasc" style="color: black;">Ascendente</a></li>
+            <li style="text-indent: 60px;"><a href="?orden=andes" style="color: black;">Descendente</a></li>
         </details>
-    </details>   
+    </details>
 </div>
 
 
 <div class="publicaciones contenedor">
     <div class="row">
         {% if error %}
-            <div class="alert alert-danger">
-                <h1 style="color: red; font-size: 50px;">¡¡{{error}}!!</h1>
-            </div>
+        <div class="alert alert-danger">
+            <h1 style="color: red; font-size: 50px;">¡¡{{error}}!!</h1>
+        </div>
         {% else %}
-            {% for p in object_list %}
-            <div class="publicacion col-md-4 col-sm-6">
-                <a class="interact" href="{% url 'publicaciones:detalle_publicacion' p.pk %}">
-                    <div class="publicacion__info">
-                        <h6>CATEGORIA: {{p.categoria}}</h6>
-                        <h2 style="text-indent: bold; font-size: 25px;"> {{p.titulo}}</h2>
-                        <h6>FECHA: {{p.creado}}</h6>
-                        <h6>AUTOR: {{p.autor}}</h6>
-                    </div>
-                    <img src="{{p.imagen.url}}">
-                </a>
-            </div>
-            {% endfor %}
+        {% for p in object_list %}
+        <div class="publicacion col-md-4 col-sm-6">
+            <a class="interact" href="{% url 'publicaciones:detalle_publicacion' p.pk %}">
+                <div class="publicacion__info">
+                    <h6>CATEGORIA: {{p.categoria}}</h6>
+                    <h2 style="text-indent: bold; font-size: 25px;"> {{p.titulo}}</h2>
+                    <h6>FECHA: {{p.creado}}</h6>
+                    <h6>AUTOR: {{p.autor}}</h6>
+                </div>
+                <img src="{{p.imagen.url}}">
+            </a>
+        </div>
+        {% endfor %}
         {% endif %}
     </div>
 </div>

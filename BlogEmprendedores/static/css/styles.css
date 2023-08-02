@@ -172,11 +172,15 @@ header {
 }
 
 /* Publicaciones */
-
 .publicaciones{
     margin: 10rem auto;
     background-color: var(--fondo);
     padding: 2rem;
+}
+
+.publicaciones-titulo{
+    color: var(--color_principal);
+    font-weight: bold;
 }
 
 .publicacion{
@@ -206,6 +210,11 @@ header {
     font-weight: bold;
     color: var(--color_principal);
     font-size: 5rem;
+}
+
+.bienvenidos{
+    padding: 2rem;
+    background-color: var(--fondo);
 }
 
 /* Página login */
