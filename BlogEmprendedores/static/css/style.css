@@ -35,7 +35,11 @@ a, a:link, a:visited, a:active {
     margin: 0 auto;
 }
 
-
+.centrar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 /* Encabezado */
 header {
     background-color: var(--color_principal);
@@ -204,6 +208,33 @@ header {
     margin: 1rem auto ;
     height: 50%;
 }
+
+/* Detalle */
+.imagen-publicacion{
+    width: 80%;
+    height: 40rem;
+    margin: 0 auto;
+}
+@media (max-width: 960px) {
+    .imagen-publicacion{
+        width: 100%;
+    }
+}
+
+.titulo-publicacion{
+    background-color: var(--fondo);
+    color: var(--color_secundario);
+    padding: 2rem;
+    text-align: center;
+}
+
+.info-publicacion{
+    background-color: var(--fondo);
+    color: var(--color_secundario);
+    padding: 2rem;
+    font-size: 1.7rem;
+}
+
 
 /* Inicio */
 .inicio-titulo{
