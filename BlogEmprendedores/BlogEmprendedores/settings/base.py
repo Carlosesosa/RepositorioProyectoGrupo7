@@ -18,7 +18,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['carlossosa.pythonanywhere.com']
+ALLOWED_HOSTS = ['carlitosesosa.pythonanywhere.com']
 if not DEBUG:
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
