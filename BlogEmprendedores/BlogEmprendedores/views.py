@@ -12,7 +12,7 @@ def ListarRecientes(request):
     ctx = {}
     categorias = Categoria.objects.all()
     #CAPTURAR PARAMETRO
-    todas_publicaciones = Publicacion.objects.order_by('-creado')[:5]
+    todas_publicaciones = Publicacion.objects.order_by('-creado')[:3]
 
     ctx['object_list'] = todas_publicaciones
     ctx['categorias'] = categorias
