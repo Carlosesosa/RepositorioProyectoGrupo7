@@ -16,14 +16,6 @@ from django.urls import reverse_lazy
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-DEBUG = False
-
-ALLOWED_HOSTS = ['carlitosesosa.pythonanywhere.com']
-if not DEBUG:
-    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-
-
 
 #AUTH
 LOGIN_REDIRECT_URL = reverse_lazy('home')
@@ -66,7 +58,7 @@ ROOT_URLCONF = 'BlogEmprendedores.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'templates')],
+        'DIRS': [os.path.join(os.path.dirname(BASE_DIR),'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
