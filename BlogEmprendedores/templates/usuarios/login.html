@@ -1,13 +1,14 @@
 {% extends 'base.html' %}
 
 {% block contenido %}
-<div class="contenedor">
+<div class="contenedor centrar loguearse" style="margin: 20rem auto;">
 	<form class="pag-login" method="POST">{%csrf_token%}
+		<h1 class="titulo-login">Iniciar Sesion</h1>
 		{{form.errors}}
-		<input type="text" name="username" placeholder="USUARIO">
-		<input type="password" name="password" placeholder="PASSWORD">
+		<input type="text" name="username" placeholder="USUARIO" style="height: 4rem;">
+		<input type="password" name="password" placeholder="PASSWORD" style="height: 4rem;">
 	
-		<input type="submit" name="" value="ENVIAR">
+		<input type="submit" name="" value="ENTRAR">
 	</form>
 </div>
 

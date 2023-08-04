@@ -253,3 +253,19 @@ header {
     padding: 10rem;
     background-color: var(--fondo);
 }
+.titulo-login{
+    color: var(--color_secundario);
+    font-weight: bold;
+}
+
+/* Página register */
+.pag-register{
+    padding: 10rem;
+    margin: 10rem auto;
+    background-color: var(--fondo);
+    color: var(--color_secundario);
+}
+
+.pag-register h1{
+    font-weight: bold;
+}
